@@ -60,7 +60,7 @@ describe('ColorBox', () => {
   })
   
   it('uses the value of the opacity prop in its style', () => {
-    expect(box.prop('style')).to.contain({opacity: 1})
+    expect(box.prop('style')).to.contain({opacity: 0.9})
   })
   
   it('correctly reduces the opacity by 0.1 after first recursive call', () => {
@@ -77,7 +77,7 @@ describe('ColorBox', () => {
     // Important to remember that we want 0.1 to be the last opacity rendered
     // This means we can continue recurring as long as we are >= 0.2 opacity
     const appTree = mount(<App/>)
-    expect(appTree.find(ColorBox).length).to.equal(10) 
+    expect(appTree.find(ColorBox).length).to.equal(11) 
   })
   
 })
